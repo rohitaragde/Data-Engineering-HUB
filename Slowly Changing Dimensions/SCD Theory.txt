@@ -1,0 +1,64 @@
+Slowly Changing Dimemsions:-
+
+Dimesnions may chnage over the period of time and hence
+they are called Slowly Changing Dimemsions
+
+SCD 01:- We only have the latest information.
+
+For instance for a product Iphone 11 whose price
+was 10000 in 2022-01-01 if it changes to 8000
+in 2022-03-01 we just update the record so we always
+have the latest information but the only drawback is
+if we want to know the price it had in January
+we cant access that information.
+
+in use case scenario if we have to calculate the 
+sales of Iphone for the year 2022 we would be able to
+calculate based on the price 8000 but we lost the 
+price 10000 which was during the tenure jan-mar
+so it will give wrong results so in this case we 
+may have to go for scd type 2 but for some other case
+like if we have to just change the employee designation
+in that case scd type 01 works correctly.
+
+SCD Type 02:- Maintains history so the problem of
+              history being lost is resolved.
+			  
+
+In scd type 02, we have a effective_date and a 
+expire_date where:-
+
+a) effective_date:- it signifies when the change
+                    was made.
+					
+b) expire_date:-  it signifies when it will expire.
+
+the lastest record would have a expire_date is
+'9999-12-31' telling that its the latest record.
+
+We also have a current_flag column:-
+
+1:- if its 1 it denotes its the latest record
+0:- if its 0 it denotes its not the latest record.
+
+To establish uniqueness we have a product_key column
+which is a surrogate key which is an auto increment
+column of diffrent unique ids.
+
+A surrogate key is a system-generated value,
+often an auto-incrementing number,
+that serves as the primary key of a database table.
+
+In SCD Type 03, we jsut keep the history of one 
+previous record.
+
+Taking the same iphone example, we will just keep
+one previous iphone price to just keep one previous
+history and keep maintaining the history.
+
+
+
+
+
+
+
