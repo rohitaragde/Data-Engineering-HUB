@@ -1,0 +1,15 @@
+Git Commands to push any project to GitHub:-
+
+1) git init:- Intitialize an empty git repository
+2) git add . :- Add all the files from the repository
+3) git status:- Check the status
+4) git commit -m "message":- Commit the changes
+5) git remote add origin https://github.com/rohitaragde/SQL50.git :- Add remote origin
+6) git push origin master :- Push the local changes to GitHub ( branch can be master/main)
+
+In case you have some changes at remote to avoid conflicts follow the below steps:-
+
+1) git pull origin master --allow-unrelated-histories :- Pull the changes from remote repository to local
+2) git add . :- Add all the files from the repository
+3) git commit -m "Resolved merge conflicts":- Commit the local changes
+4) git push origin master:- Push all the local changes to Github
