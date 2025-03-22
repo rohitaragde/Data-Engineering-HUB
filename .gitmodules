@@ -4,9 +4,6 @@
 [submodule "Daily-Python-Essentials"]
 	path = Daily-Python-Essentials
 	url = https://github.com/rohitaragde/Daily-Python-Essentials
-[submodule "Advanced-SQL-50"]
-	path = Advanced-SQL-50
-	url = https://github.com/rohitaragde/Advanced-SQL-50
 [submodule "Daily_System_Design"]
 	path = Daily_System_Design
 	url = https://github.com/rohitaragde/Daily_System_Design
