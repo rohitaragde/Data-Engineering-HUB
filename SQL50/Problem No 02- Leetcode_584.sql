@@ -63,8 +63,9 @@ create table Cust001
 
  select * from Cust001; 
 
- select name from Cust001
- where id not in (select id from Cust001 where referee_id=2);
+SELECT name 
+FROM Customer
+WHERE referee_id IS NULL OR referee_id <> 2;
 
 
 
