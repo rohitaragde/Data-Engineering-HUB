@@ -51,7 +51,7 @@ create table Tweets001
 
  select * from Tweets001;
 
- select distinct tweet_id from Tweets001
- where len(content)>15
- order by tweet_id;
+ select tweet_id from tweets
+ where length(content)>15
+ order by 1
 
