@@ -120,13 +120,6 @@ create table Visits11
   where t.visit_id is null
   group by v.customer_id
 
-   select distinct v.customer_id,count(v.visit_id) as count_no_trans
-  from Visits11 v left join Transactions11 t
-  on v.visit_id=t.visit_id
-  where v.visit_id not in (select t.visit_id from Transactions11 t)
-  group by v.customer_id
-
-
 
 
 
