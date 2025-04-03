@@ -98,9 +98,10 @@ create table Employees001
   /* Write a solution to show the unique ID of each user, 
   If a user does not have a unique ID replace just show null.*/
 
-select u.unique_id,
-nname as name from Employees001 e left join EmployeesUni u
-on e.eid=u.empid
-order by u.unique_id;
+
+select IFNULL(eu.unique_id,NULL) as unique_id,e.name
+from Employees e left join EmployeeUNI eu
+on e.id=eu.id
+order by unique_id
 
 
