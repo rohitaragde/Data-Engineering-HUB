@@ -68,7 +68,7 @@ create table Views001
 
  select distinct author_id as id from Views001
  where author_id=viwer_id
- order by author_id;
+ order by id asc;
 
 
 
