@@ -119,6 +119,7 @@ In case of a tie, order it by contest_id in ascending order.
 */
 
 select contest_id,
-round(count(distinct users_id)*100.00/(select count(users_id) from Users1),2) as percentage
-from Register1
+round(count(distinct user_id)*100.00/(select count(user_id) from Users),2) as percentage
+from Register
 group by contest_id
+order by percentage desc,contest_id
