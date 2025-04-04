@@ -107,11 +107,10 @@ create table Prices1
 Return the result table in any order.
 */
 
-select p.product_id,
-round(sum(u.units*p.price)/sum(u.units),2) as average_price   
-from Prices1 p join UnitsSold1 u
-on p.product_id=u.product_id
-where u.purchase_date between p.start_dates and p.end_dates
-group by p.product_id 
+SELECT p.product_id, IFNULL(ROUND(SUM(units*price)/SUM(units),2),0) AS average_price
+FROM Prices p LEFT JOIN UnitsSold u
+ON p.product_id = u.product_id AND
+u.purchase_date BETWEEN start_date AND end_date
+group by product_id
 
 
