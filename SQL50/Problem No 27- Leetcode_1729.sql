@@ -63,8 +63,10 @@ insert into Followers1 values(2,1);
 
 select * from Followers1;
 
-select users_id,count(follower_id) as followers_count
-from Followers1
-group by users_id;
+select distinct user_id,
+count(distinct follower_id) as followers_count
+from followers
+group by user_id
+order by 1
 
 
