@@ -106,12 +106,14 @@ Return the result table ordered by employee_id.
 
  select * from Employeees;
 
-select m.emp_id , m.enames,
-count(e.enames) as reports_count,
-round(avg(e.age),2) as average_age
-from Employeees m join Employeees e
-on m.emp_id=e.reports_to
-group by m.emp_id,m.enames
+select m.employee_id as employee_id,
+m.name as name,
+count(e.name) as reports_count,
+round(avg(e.age),0) as average_age
+from employees m join employees e
+on m.employee_id= e.reports_to
+group by m.employee_id,m.name
+order by 1
 
 
 
