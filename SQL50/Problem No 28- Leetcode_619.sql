@@ -97,15 +97,10 @@ insert into MyNumbers1 values(3);
 select * from MyNumbers1;
 
 
-
+--- Derived Tables ---
 select max(num) as num 
 from
 ( select
 num from MyNumbers1
 group by num
 having count(num)=1) as unique_nums
-
-select max(num) as num
-from MyNumbers1
-where num in
-(select num from MyNumbers1 group by num having count(num)=1)  
