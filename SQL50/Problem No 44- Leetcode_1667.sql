@@ -57,17 +57,10 @@ create table Users16
  is uppercase and the rest are lowercase.
 Return the result table ordered by user_id.*/
 
-SQL Server:-
+SELECT user_id,
+CONCAT(UPPER(SUBSTR(name, 1, 1)), LOWER(SUBSTR(name, 2,length(name)))) AS name
+FROM Users order by user_id
 
-select users_id,
-Upper(SUBSTRING(nname,1,1))+ lower(SUBSTRING(nname,2,len(nname)-1)) as name
-from Users16;
-
-MySQL:-
- 
-select users_id,
-concat(Upper(SUBSTRING(nname,1,1)),lower(SUBSTRING(nname,2))) as name
-from Users16;
 
 
 
